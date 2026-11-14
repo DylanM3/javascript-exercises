@@ -9,11 +9,20 @@ function addItem(event) {
 
     // Transfer input to safe variable and reset for next use
     let currentInput = inputVar.value;
+    inputVar.value = "";
 
     // Create new elements
     const newLi = document.createElement("li");
     const newSpan = document.createElement("span");
+    newSpan.classList.add("shopping-list-item");
+    const items = document.querySelectorAll(".shopping-list-item");
+    const identifier = items.length + 1;
+
+    newLi.id = `list-item-${identifier}`
     const newBtn = document.createElement("button");
+    newBtn.addEventListener("click", () => {
+        document.getElementById(`list-item-${identifier}`).remove();
+    })
 
     // Append span and button as children of the <li>
     newLi.appendChild(newSpan);
