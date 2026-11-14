@@ -8,6 +8,6 @@ let mary = { name: "Mary", age: 28 };
 
 let users = [ john, pete, mary ];
 
-let names = /* ... your code */
+let names = users.map(user => {return user.name})
 
 console.log(names); // John, Pete, Mary
